@@ -1,0 +1,29 @@
+* {
+  margin: 0;
+  padding: 0;
+  box-sizing: border-box;
+}
+
+html {
+  background: url('../img/background.jpg') no-repeat fixed center center;
+}
+
+
+.App {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+}
+
+.app-title {
+  margin: 20px 0px;
+}
+
+input {
+  margin: 30px auto;
+}
+
+.error {
+  border: 2px solid rgb(212, 100, 100);
+}

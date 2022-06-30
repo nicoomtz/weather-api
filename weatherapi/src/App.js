@@ -1,11 +1,13 @@
-import './App.css';
-import { useEffect, useState } from 'react';
+import './assets/css/App.css';
+import { useState } from 'react';
 import axios from 'axios';
-import Weather from './Weather';
+import Weather from './components/Weather';
+import Spinner from './components/Spinner';
 
 function App() {
   const [city, setCity] = useState('')
   const [cityData, setCityData] = useState([])
+  const [loading, setLoading] = useState(false)
 
   const getWeather = async () => {
     const toArray = [];
@@ -14,26 +16,29 @@ function App() {
     const res = await axios.get(url)
     toArray.push(res.data)
     setCityData(toArray)
+    setLoading(false)
     } catch(err) {
       console.log(err)
+      setLoading(false)
+      document.querySelector('input').classList.add('error')
     }
   }
-  useEffect(() => {
-    getWeather()
-    }, [])
 
   function handleSubmit(e) {
     e.preventDefault();
+    setLoading(true)
     getWeather()
   }
 
   return (
-    <div className="App">
+    <div className='App'>
+      <h1 className='app-title'>Weather App</h1>
       <form className='weather-form' onSubmit={handleSubmit}>
-        <input type='text' onChange={(e) => setCity(e.target.value)} />
+        <input type='text' onChange={(e) => setCity(e.target.value)} value={city}/>
       </form>
       <div className='weather-container'>
-        {cityData.length === 1 ? <Weather city={cityData}/> : `Enter a city to search`}
+        {loading ? <Spinner /> : ''}
+        {cityData.length === 1 ? <Weather city={cityData} loading={loading} setLoading={setLoading}/> : `Enter a city to search`}
       </div>
     </div>
   );
