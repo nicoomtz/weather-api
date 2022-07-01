@@ -6,7 +6,8 @@
   flex-direction: row;
   justify-content: center;
   align-items: center;
-  background-color: rgb(3, 4, 29);
+  /* background-color: rgba(9, 12, 105, 0.623); */
+  background: rgba(3, 4, 29, 0.89);
   border-radius: 10px;
   color: #f1f1f1;
 }
@@ -23,7 +24,7 @@
 
 .weather-data-city {
   width: 285px;
-  background: rgba(0, 0, 0, 0.6) url('../img/city.jpg');
+  background: rgba(0, 0, 0, 0.35) url('../img/city.jpg');
   background-size: cover;
   background-blend-mode: darken;
   height: 100%;
@@ -55,7 +56,13 @@
   font-weight: bold;
 }
 
-@media (max-width: 545px) {
+.temp-info-span {
+  font-size: 1.15rem;
+  font-weight: bold;
+}
+
+
+@media (max-width: 575px) {
   .weather-data {
     width: 100%;
     height: 550px;
@@ -64,7 +71,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgb(3, 4, 29);
+    background-color: rgba(3, 4, 29, 0.89);
     border-radius: 10px;
     color: #f1f1f1;
   }

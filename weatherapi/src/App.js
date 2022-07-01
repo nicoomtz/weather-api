@@ -12,6 +12,7 @@ function App() {
   const getWeather = async () => {
     // document.querySelector('.weather-container-info').innerText = '';
     const toArray = [];
+    setCityData('')
     try{
     const url = `https://api.openweathermap.org/data/2.5/weather?q=${city}&appid=0d6af36e67177f00ba711bacabf2fa07&units=metric`
     const res = await axios.get(url)
@@ -31,6 +32,13 @@ function App() {
     getWeather()
   }
 
+  function cleanHTML() {
+    const card = document.querySelector('.weather-container-info')
+    while(card.firstChild) {
+      card.removeChild(card.firstChild)
+    }
+  }
+
   return (
     <div className='App'>
       <h1 className='app-title'>Weather App</h1>
@@ -41,7 +49,7 @@ function App() {
         <div className='weather-container-info'>
           {cityData.length === 1 ? <Weather city={cityData} loading={loading} setLoading={setLoading}/> : ``}
         </div>
-        {loading ? <Spinner /> : ''}
+        {loading ? <Spinner cleanHTML={cleanHTML} /> : ''}
       </div>
     </div>
   );

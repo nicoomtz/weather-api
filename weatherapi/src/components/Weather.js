@@ -31,11 +31,11 @@ function Weather({city, loading, setLoading}) {
         <h3 className="weather-data-city-name">{cityName}, {cityCountry}</h3>
       </div>
       <div className='weather-data-temp'>
-        <div className='temp-info'>MinTemp: {cityMinTemp}°C</div>
-        <div className='temp-info'>MaxTemp: {cityMaxTemp}°C</div>
-        <div className='temp-info'>Feels Like: {cityFeelsLike}°C</div>
-        <div className='temp-info'>Humidity: {cityHumidity}%</div>
-        <div className='temp-info'>Wind Speed: {cityWind}m/s</div>
+        <div className='temp-info'>MinTemp: <span className='temp-info-span'>{cityMinTemp}°C</span></div>
+        <div className='temp-info'>MaxTemp: <span className='temp-info-span'>{cityMaxTemp}°C</span></div>
+        <div className='temp-info'>Feels Like: <span className='temp-info-span'>{cityFeelsLike}°C</span></div>
+        <div className='temp-info'>Humidity: <span className='temp-info-span'>{cityHumidity}%</span></div>
+        <div className='temp-info'>Wind Speed: <span className='temp-info-span'>{cityWind}m/s</span></div>
       </div>
     </div>
   )

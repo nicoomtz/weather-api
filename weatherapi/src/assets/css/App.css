@@ -8,7 +8,7 @@
 }
 
 html {
-  background: rgba(0, 0, 0, 0.3) url('../img/background.jpg') no-repeat fixed center center;
+  background: rgba(0, 0, 0, 0.4) url('../img/background.jpg') no-repeat fixed center center;
   background-blend-mode: darken;
 }
 
@@ -22,6 +22,7 @@ html {
 
 .app-title {
   margin: 20px 0px;
+  color: #000000;
 }
 
 input {
