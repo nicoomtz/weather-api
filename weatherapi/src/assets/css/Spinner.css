@@ -14,7 +14,7 @@
   width: 24px;
   height: 24px;
   border-radius: 50%;
-  background: #85a2b6;
+  background: #11191f;
   animation: ldio-s0fjl7zmxa 1s linear infinite;
   
 }.ldio-s0fjl7zmxa div:nth-child(1) > div {
@@ -98,3 +98,9 @@
   transform-origin: 0 0; /* see note above */
 }
 .ldio-s0fjl7zmxa div { box-sizing: content-box; }
+
+@media (max-width: 545px) {
+  .ldio-s0fjl7zmxa {
+    display: none;
+  }
+}

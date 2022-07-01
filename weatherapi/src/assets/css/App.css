@@ -1,11 +1,15 @@
+@import url('https://fonts.googleapis.com/css2?family=Gantari:wght@400;600&display=swap');
+
 * {
   margin: 0;
   padding: 0;
   box-sizing: border-box;
+  font-family: 'Gantari', sans-serif;
 }
 
 html {
-  background: url('../img/background.jpg') no-repeat fixed center center;
+  background: rgba(0, 0, 0, 0.3) url('../img/background.jpg') no-repeat fixed center center;
+  background-blend-mode: darken;
 }
 
 
@@ -22,8 +26,31 @@ html {
 
 input {
   margin: 30px auto;
+  border: none;
+  outline: none;
+  box-shadow: 0 0 1px #c5c5c5;
+  font-size: 16px;
+  padding: 8px;
+  border-radius: 5px;
 }
 
 .error {
   border: 2px solid rgb(212, 100, 100);
+}
+
+#hidden {
+  display: none;
+}
+
+.weather-container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  flex-direction: column;
+
+}
+
+.weather-container-info {
+  border-radius: 10px;
+  box-shadow: 0 3px 10px rgb(5, 5, 5);
 }
