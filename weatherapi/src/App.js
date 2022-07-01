@@ -9,6 +9,8 @@ function App() {
   const [cityData, setCityData] = useState([])
   const [loading, setLoading] = useState(false)
 
+  const inputElement = document.querySelector('.inputElement')
+
   const getWeather = async () => {
     // document.querySelector('.weather-container-info').innerText = '';
     const toArray = [];
@@ -19,10 +21,13 @@ function App() {
     toArray.push(res.data)
     setCityData(toArray)
     setLoading(false)
+    document.querySelector('input').classList.remove('error')
+
     } catch(err) {
       console.log(err)
       setLoading(false)
       document.querySelector('input').classList.add('error')
+      setCity('Enter a real city...')
     }
   }
 
@@ -43,11 +48,11 @@ function App() {
     <div className='App'>
       <h1 className='app-title'>Weather App</h1>
       <form className='weather-form' onSubmit={handleSubmit}>
-        <input type='text' onChange={(e) => setCity(e.target.value)} placeholder="Enter a city" value={city}/>
+        <input type='text' onChange={(e) => setCity(e.target.value)} placeholder="Enter a city" value={city} className="inputElement"/>
       </form>
       <div className='weather-container'>
         <div className='weather-container-info'>
-          {cityData.length === 1 ? <Weather city={cityData} loading={loading} setLoading={setLoading}/> : ``}
+          {cityData.length === 1 ? <Weather city={cityData} loading={loading} setLoading={setLoading}/> : ''}
         </div>
         {loading ? <Spinner cleanHTML={cleanHTML} /> : ''}
       </div>

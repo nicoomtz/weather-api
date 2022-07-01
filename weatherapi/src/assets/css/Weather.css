@@ -7,7 +7,7 @@
   justify-content: center;
   align-items: center;
   /* background-color: rgba(9, 12, 105, 0.623); */
-  background: rgba(3, 4, 29, 0.89);
+  background: rgba(3, 4, 29, 0.8);
   border-radius: 10px;
   color: #f1f1f1;
 }
@@ -71,7 +71,7 @@
     flex-direction: column;
     justify-content: center;
     align-items: center;
-    background-color: rgba(3, 4, 29, 0.89);
+    background-color: rgba(3, 4, 29, 0.8);
     border-radius: 10px;
     color: #f1f1f1;
   }

@@ -37,6 +37,7 @@ input {
 
 .error {
   border: 2px solid rgb(212, 100, 100);
+  color: red;
 }
 
 #hidden {
